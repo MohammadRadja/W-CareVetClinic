@@ -11042,7 +11042,7 @@ h5,
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;
-  top: 40px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 3;
@@ -11067,8 +11067,8 @@ h5,
 }
 .ftco-navbar-light .navbar-brand {
   color: #fff;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .ftco-navbar-light .navbar-brand h1 {
   color: #000000;
