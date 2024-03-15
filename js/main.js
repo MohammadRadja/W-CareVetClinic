@@ -18,10 +18,10 @@
   };
   fullHeight();
 
-  //direct content
-  document.getElementById("row").addEventListener("click", function () {
-    window.location.href = "../services.html"; // Mengarahkan ke URL yang ditentukan
-  });
+  // //direct content
+  // document.getElementById("row").addEventListener("click", function () {
+  //   window.location.href = "../services.html"; // Mengarahkan ke URL yang ditentukan
+  // });
 
   // loader
   var loader = function () {
