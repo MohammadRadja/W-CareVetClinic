@@ -8846,7 +8846,7 @@ button.bg-dark:focus {
 
 .mb-1,
 .my-1 {
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 0.2rem !important;
 }
 
 .ml-1,
@@ -11619,10 +11619,15 @@ h5,
 }
 
 .intro .services {
-  padding: 25px;
+  padding: 10px;
+  border-radius: 25px;
+  display: inline-block;
+  width: 100%;
+  position: relative;
   background: #fff;
-  border-radius: 4px;
+  margin-bottom: 40px;
 }
+
 @media (min-width: 768px) {
   .intro .services {
     margin-top: -75px;
@@ -11631,7 +11636,7 @@ h5,
 
 .services {
   padding: 25px;
-  border-radius: 4px;
+  border-radius: 25px;
   display: block;
   width: 100%;
   position: relative;
@@ -11985,7 +11990,7 @@ textarea.form-control {
 }
 
 .ftco-no-pt {
-  padding-top: 0 !important;
+  padding-top: 10px !important;
 }
 
 .ftco-no-pb {
@@ -12373,7 +12378,7 @@ textarea.form-control {
   }
 
   .intro.index {
-    max-height: 42em;
+    max-height: 10px;
     overflow-y: hidden;
   }
 }
