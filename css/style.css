@@ -11359,15 +11359,12 @@ h5,
 .owl-carousel .owl-dots .owl-dot.active {
   background: #b3b3b3;
 }
-
 .hero-wrap {
   width: 100%;
   height: 700px;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
+
 @media (max-width: 991.98px) {
   .hero-wrap {
     background-position: center center !important;
@@ -11511,6 +11508,14 @@ h5,
 .btn:active,
 .btn:focus {
   outline: none;
+}
+.btn.btn-emergency {
+  background: #fa0000;
+  border: 1px solid #fa0000 !important;
+  color: #fff !important;
+  font-weight: 800;
+  font-family: "Roboto";
+  font-size: 16px;
 }
 .btn.btn-primary {
   background: #fd4c82;
