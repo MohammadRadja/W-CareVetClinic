@@ -12378,7 +12378,7 @@ textarea.form-control {
   }
 
   .intro.index {
-    max-height: 10px;
+    max-height: 40rem;
     overflow-y: hidden;
   }
 }
