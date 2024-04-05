@@ -11364,6 +11364,7 @@ h5,
   height: 700px;
   position: relative;
   background-size: cover;
+  overflow: hidden;
   /* transform: scaleX(-1); */
 }
 
@@ -11374,7 +11375,7 @@ h5,
 }
 @media (max-width: 767.98px) {
   .hero-wrap {
-    background-position: center center !important;
+    object-fit: contain;
   }
 }
 .hero-wrap .slider-text {
@@ -12722,6 +12723,7 @@ textarea.form-control {
 .blog-entry .desc {
   background: #fff;
   padding: 20px;
+  height: 120px;
 }
 
 .blog-entry .text {
