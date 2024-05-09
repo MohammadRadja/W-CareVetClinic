@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
@@ -113,9 +114,21 @@
     <!--Gallery Section Start -->
     <section class="ftco-section bg-light">
       <div class="container">
-        <div class="row d-flex">
 
-          <div class="col-lg-4 ftco-animate">
+          <div class="project-filter" data-column="">
+            <div id="filters" class="cat-filter">
+              <a href="#" data-filter="*" class="filter-item all-cat selected">All</a>
+              <a href="#" data-filter=".foto" class="filter-item ">Foto</a>
+              <a href="#" data-filter=".video" class="filter-item">Video</a>
+              <a href="#" data-filter=".customer" class="filter-item ">Customer</a>
+              <a href="#" data-filter=".youtube" class="filter-item">Youtube</a>
+              <a href="#" data-filter=".tiktok" class="filter-item">Tiktok</a>
+              <a href="#" data-filter=".other" class="filter-item">Other</a>
+            </div>
+            
+            <div id="projects" class="filters-grid row d-flex" style="border: 1px solid;">
+
+          <div class="col-lg-4 ftco-animate foto">
             <div class="blog-entry">
               <div
                 class="block-20"
@@ -126,13 +139,6 @@
               <div class="desc">
                 <div class="d-flex">
                   <div class="meta pt-1 text-right pr-4">
-                    <div>
-                      
-                    </div>
-                    <div>
-                    </div>
-                    <div>
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -145,7 +151,7 @@
             </div>
             </div>
 
-          <div class="col-lg-4 ftco-animate">
+          <div class="col-lg-4 ftco-animate customer">
             <div class="blog-entry">
               <div
                 class="block-20"
@@ -156,12 +162,6 @@
               <div class="desc">
                 <div class="d-flex">
                   <div class="meta pt-1 text-right pr-4">
-                    <div>
-                     </div>
-                    <div>
-                      </div>
-                    <div>
-                     </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -174,7 +174,7 @@
             </div>
             </div>
 
-          <div class="col-lg-4 ftco-animate">
+          <div class="col-lg-4 ftco-animate foto">
             <div class="blog-entry">
               <div
                 class="block-20"
@@ -185,13 +185,6 @@
               <div class="desc">
                 <div class="d-flex">
                   <div class="meta pt-1 text-right pr-4">
-                    <div>
-                    </div>
-                    <div>
-                     </div>
-                    <div>
-                       
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -204,7 +197,7 @@
             </div>
           </div>
           
-          <div class="col-lg-4 ftco-animate">
+          <div class="col-lg-4 ftco-animate foto">
             <div class="blog-entry">
               <div
                 class="block-20"
@@ -215,29 +208,19 @@
               <div class="desc">
                 <div class="d-flex">
                   <div class="meta pt-1 text-right pr-4">
-                    <div>
-                    
-                    </div>
-                    <div>
-                     
-                    </div>
-                    <div>
-                      
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       <p>Ruangan Poliklinik 1
                       </p>
                     </h3>
-                   
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 ftco-animate">
+          <div class="col-lg-4 ftco-animate foto">
             <div class="blog-entry">
               <div
                 class="block-20"
@@ -248,29 +231,19 @@
               <div class="desc">
                 <div class="d-flex">
                   <div class="meta pt-1 text-right pr-4">
-                    <div>
-                   
-                    </div>
-                    <div>
-                     
-                    </div>
-                    <div>
-                   
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       <p>Ruangan Poliklinik 2
                       </p>
                     </h3>
-                
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 ftco-animate">
+          <div class="col-lg-4 ftco-animate foto">
             <div class="blog-entry">
               <div
                 class="block-20"
@@ -281,28 +254,122 @@
               <div class="desc">
                 <div class="d-flex">
                   <div class="meta pt-1 text-right pr-4">
-                    <div>
-                     
-                    </div>
-                    <div>
-                     
-                    </div>
-                    <div>
-                        
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       <p>Ruangan Operasi
                       </p>
                     </h3>
-                  
                   </div>
                 </div>
               </div>
             </div>
           </div>
           
+          <div class="col-lg-4 ftco-animate">
+            <div class="blog-entry">
+              <div
+                class="block-20"
+                style="background-image: url('images/gallery/poppy.webp')"
+                loading="lazy"
+              >
+              </div>
+              <div class="desc">
+                <div class="d-flex">
+                  <div class="meta pt-1 text-right pr-4">
+                    <div>
+                     <p><span class="fa fa-calendar mr-2"></span>Mei. 09,
+                        2024</p>
+                    </div>
+                  </div>
+                  <div class="text d-block">
+                    <h3 class="heading">
+                      Anjing Poppy diagnosa eklamsia bersama drh Yuni
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 ftco-animate">
+            <div class="blog-entry">
+              <div
+                class="block-20"
+                style="background-image: url('images/gallery/buzzpost.webp')"
+                loading="lazy"
+              >
+              </div>
+              <div class="desc">
+                <div class="d-flex">
+                  <div class="meta pt-1 text-right pr-4">
+                    <div>
+                     <p><span class="fa fa-calendar mr-2"></span>Mei. 07,
+                        2024</p>
+                    </div>
+                  </div>
+                  <div class="text d-block">
+                    <h3 class="heading">
+                      Anjing Buzz post infeksi ektoparasit bersama drh Bagas
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 ftco-animate">
+            <div class="blog-entry">
+              <div
+                class="block-20"
+                style="background-image: url('images/gallery/mbul.webp')"
+                loading="lazy"
+              >
+              </div>
+              <div class="desc">
+                <div class="d-flex">
+                  <div class="meta pt-1 text-right pr-4">
+                    <div>
+                     <p><span class="fa fa-calendar mr-2"></span>Apr. 30,
+                        2024</p>
+                    </div>
+                  </div>
+                  <div class="text d-block">
+                    <h3 class="heading">
+                      Kucing Mbul post abortus
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 ftco-animate">
+            <div class="blog-entry">
+              <div
+                class="block-20"
+                style="background-image: url('images/gallery/oreo.webp')"
+                loading="lazy"
+              >
+              </div>
+              <div class="desc">
+                <div class="d-flex">
+                  <div class="meta pt-1 text-right pr-4">
+                    <div>
+                     <p><span class="fa fa-calendar mr-2"></span>Apr. 24,
+                        2024</p>
+                    </div>
+                  </div>
+                  <div class="text d-block">
+                    <h3 class="heading">
+                      Anjing Oreo pasca steril
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 ftco-animate">
             <div class="blog-entry">
               <div
@@ -317,10 +384,6 @@
                     <div>
                      <p><span class="fa fa-calendar mr-2"></span>Apr. 8,
                         2024</p>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
                     </div>
                   </div>
                   <div class="text d-block">
@@ -347,10 +410,6 @@
                      <p><span class="fa fa-calendar mr-2"></span>Apr. 10,
                         2024</p>
                     </div>
-                    <div>
-                    </div>
-                    <div>
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -376,10 +435,6 @@
                      <p><span class="fa fa-calendar mr-2"></span>Apr. 11,
                         2024</p>
                     </div>
-                    <div>
-                    </div>
-                    <div>
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -404,10 +459,6 @@
                     <div>
                      <p><span class="fa fa-calendar mr-2"></span>Apr. 1,
                         2024</p>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
                     </div>
                   </div>
                   <div class="text d-block">
@@ -435,10 +486,6 @@
                      <p><span class="fa fa-calendar mr-2"></span>Apr. 2,
                         2024</p>
                     </div>
-                    <div>
-                    </div>
-                    <div>
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -464,10 +511,6 @@
                     <div>
                      <p><span class="fa fa-calendar mr-2"></span>Apr. 4,
                         2024</p>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
                     </div>
                   </div>
                   <div class="text d-block">
@@ -495,10 +538,6 @@
                      <p><span class="fa fa-calendar mr-2"></span>Mar. 25,
                         2024</p>
                     </div>
-                    <div>
-                    </div>
-                    <div>
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -524,10 +563,6 @@
                     <div>
                      <p><span class="fa fa-calendar mr-2"></span>Mar. 24,
                         2024</p>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
                     </div>
                   </div>
                   <div class="text d-block">
@@ -555,10 +590,6 @@
                      <p><span class="fa fa-calendar mr-2"></span>Mar. 24,
                         2024</p>
                     </div>
-                    <div>
-                    </div>
-                    <div>
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
@@ -584,10 +615,6 @@
                     <div>
                      <p><span class="fa fa-calendar mr-2"></span>Mar. 13,
                         2024</p>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
                     </div>
                   </div>
                   <div class="text d-block">
@@ -645,18 +672,11 @@
                       <p><span class="fa fa-calendar mr-2"></span>Mar. 16,
                         2024</p>
                     </div>
-                    <div>
-                     
-                    </div>
-                    <div>
-                     
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       Moment kepulangan kc Lala
                     </h3>
-                  
                   </div>
                 </div>
               </div>
@@ -678,19 +698,11 @@
                       <p><span class="fa fa-calendar mr-2"></span>Mar. 16,
                         2024</p>
                     </div>
-                    <div>
-                    
-                    </div>
-                    <div>
-                   
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                      Moment kepulangan kc owi pasca keluhan lemas tidak mau makan
-                      
                     </h3>
-                   
                   </div>
                 </div>
               </div>
@@ -712,48 +724,10 @@
                       <p><span class="fa fa-calendar mr-2"></span>Mar. 17,
                         2024</p>
                     </div>
-                    <div>
-                   
-                    </div>
-                    <div>
-                        
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       Moment kepulangan kc lilo pasca steril
-                    </h3>
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 ftco-animate">
-            <div class="blog-entry">
-              <div
-                class="block-20"
-                style="background-image: url('images/gallery/gallery8.webp')"
-                loading="lazy"
-              >
-              </div>
-              <div class="desc">
-                <div class="d-flex">
-                  <div class="meta pt-1 text-right pr-4">
-                    <div>
-                      <p><span class="fa fa-calendar mr-2"></span>Oct. 28,
-                        2023</p>
-                    </div>
-                    <div>
-                      
-                    </div>
-                    <div>
-                  
-                    </div>
-                  </div>
-                  <div class="text d-block">
-                    <h3 class="heading">
-                      Moment kepulangan kc kookie pasca terkena virus panle
                     </h3>
                   </div>
                 </div>
@@ -771,19 +745,12 @@
                       <p><span class="fa fa-calendar mr-2"></span>Dec. 08,
                         2023</p>
                     </div>
-                    <div>
-                     
-                    </div>
-                    <div>
-                      
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       <p>DOKTER INI PERNAH MENOLAK PASIEN!?!! #Ep1
                       </p>
                     </h3>
-                   
                   </div>
                 </div>
               </div>
@@ -800,19 +767,12 @@
                       <p><span class="fa fa-calendar mr-2"></span>Dec. 22,
                         2023</p>
                     </div>
-                    <div>
-                    
-                    </div>
-                    <div>
-                     
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       <p>PROMO STERIL SEBENERNYA BUAT KUCING RESCUE??! #2
                       </p>
                     </h3>
-                   
                   </div>
                 </div>
               </div>
@@ -829,19 +789,12 @@
                       <p><span class="fa fa-calendar mr-2"></span>Jan. 25,
                         2023</p>
                     </div>
-                    <div>
-                    
-                    </div>
-                    <div>
-                    
-                    </div>
                   </div>
                   <div class="text d-block">
                     <h3 class="heading">
                       <p>INTIP KESERUAN MAGANG DI W'CARE VET CLINIC!!! #3
                       </p>
                     </h3>
-                 
                   </div>
                 </div>
               </div>
@@ -1037,6 +990,7 @@
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/jquery.timepicker.min.js"></script>
     <script src="js/scrollax.min.js"></script>
+	  <script src='js/jquery.isotope.min.js'></script>
     <script src="js/google-map.js"></script>
 
     <script src="js/main.js"></script>

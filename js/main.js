@@ -239,3 +239,32 @@
   });
   $(".appointment_time").timepicker();
 })(jQuery);
+
+//Gallery Filter
+$(window).on("load", function () {
+  var $container = $("#projects");
+  if ($container.length > 0) {
+    $container.isotope({
+      itemSelector: '.project-item',
+      filter: '*',
+      masonry: {
+          columnWidth: 1
+      }
+  });
+  $("#filters a").on("click", function () {
+    var $this = $(this);
+    if ($this.hasClass("selected")) {
+      return false;
+    }
+    var $optionSet = $this.parent(); // Menggunakan parent() untuk memilih elemen parent yang benar
+    $optionSet.find(".selected").removeClass("selected");
+    $this.addClass("selected");
+    var selector = $(this).attr("data-filter");
+    if ($container.length > 0) {
+      $container.isotope({
+        filter: selector,
+      });
+    }
+    return false;
+  });
+});

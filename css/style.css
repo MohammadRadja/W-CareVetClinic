@@ -11190,6 +11190,29 @@ textarea.form-control {
   padding: 7em 0;
   position: relative;
 }
+.filters-grid {
+  overflow: hidden;
+}
+#filters {
+  padding-bottom: 15px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #cccccc;
+}
+#filters a {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 40px;
+  text-decoration: none;
+}
+#filters a.selected,
+#filters a:hover {
+  color: #993b3b;
+}
+#filters a:last-child {
+  margin-right: 0;
+}
+
 @media (max-width: 767.98px) {
   .ftco-section {
     padding: 6em 0;
