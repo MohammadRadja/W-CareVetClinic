@@ -429,25 +429,34 @@ mark,
 }
 
 .whatsapp-scroll {
-  width: 50px;
-  height: 50px;
+  width: 130px;
+  height: 100px;
   line-height: 50px;
   position: fixed;
-  bottom: -10%;
+  bottom: -20%;
   right: 50px;
-  border-radius: 6px;
+  border-radius: 5px;
   z-index: 99;
   text-align: center;
   cursor: pointer;
-  background: #fff;
+  background: #25d366;
   -webkit-transition: 1s ease;
   transition: 0.3s ease;
   border: none;
 }
 
 .whatsapp-scroll i {
-  color: #25d366;
-  font-size: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.whatsapp-scroll span {
+  position: relative;
+  display: inline-block; /* Mengubah span menjadi blok inline */
+  vertical-align: middle; /* Mengatur penempatan vertikal agar sejajar dengan ikon */
+  font-size: 20px; /* Ukuran teks */
+  color: #fff; /* Warna teks */
+  margin-left: 5px; /* Memberikan sedikit jarak antara ikon dan teks */
 }
 
 .whatsapp-scroll.open {
@@ -469,9 +478,12 @@ mark,
   );
 }
 .whatsapp-scroll:hover {
-  background: #fff;
+  background: #128c7e;
 }
 
+.whatsapp-scroll:active {
+  box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); /* Menambahkan shadow saat tombol ditekan dengan warna hijau */
+}
 @media (max-width: 767px) {
   .label-promo {
     width: 120px;
