@@ -242,15 +242,14 @@
 
 //Gallery Filter
 $(window).on("load", function () {
-  var $container = $("#projects");
+  var $container = $("#gallery");
   if ($container.length > 0) {
     $container.isotope({
-      itemSelector: '.project-item',
-      filter: '*',
-      masonry: {
-          columnWidth: 1
-      }
-  });
+      itemSelector: ".ftco-animate",
+      filter: "*",
+      layoutMode: "fitRows", // Use 'fitRows' for masonry layout
+    });
+  }
   $("#filters a").on("click", function () {
     var $this = $(this);
     if ($this.hasClass("selected")) {

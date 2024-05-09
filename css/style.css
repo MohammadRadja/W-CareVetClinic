@@ -11207,7 +11207,7 @@ textarea.form-control {
 }
 #filters a.selected,
 #filters a:hover {
-  color: #993b3b;
+  color: #fa0000;
 }
 #filters a:last-child {
   margin-right: 0;
