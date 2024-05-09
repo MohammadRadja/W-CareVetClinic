@@ -103,11 +103,13 @@
       if (st > 150) {
         if (!navbar.hasClass("scrolled")) {
           navbar.addClass("scrolled");
+          $(".scroll-to-target").addClass("open");
         }
       }
       if (st < 150) {
         if (navbar.hasClass("scrolled")) {
           navbar.removeClass("scrolled sleep");
+          $(".scroll-to-target").removeClass("open");
         }
       }
       if (st > 350) {
