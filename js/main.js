@@ -240,7 +240,7 @@
   $(".appointment_time").timepicker();
 })(jQuery);
 
-//Gallery Filter
+// Gallery Filter
 $(window).on("load", function () {
   var $container = $("#gallery");
   if ($container.length > 0) {
