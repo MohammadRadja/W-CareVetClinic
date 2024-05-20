@@ -484,6 +484,31 @@ mark,
 .whatsapp-scroll:active {
   box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); /* Menambahkan shadow saat tombol ditekan dengan warna hijau */
 }
+/* CSS untuk perangkat mobile */
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    display: none; /* Menyembunyikan dropdown menu secara default */
+  }
+
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Menampilkan dropdown menu ketika nav-item dihover */
+    position: absolute;
+    background-color: #ffffff; /* Warna latar dropdown menu */
+    border: 1px solid #cccccc; /* Warna border dropdown menu */
+    z-index: 999; /* Mengatur z-index untuk tumpukan elemen */
+  }
+
+  .dropdown-menu li {
+    display: block; /* Menampilkan item dropdown dalam blok */
+  }
+
+  .dropdown-menu li a {
+    display: block; /* Menampilkan link dropdown dalam blok */
+    padding: 10px; /* Padding pada link dropdown */
+    color: #333333; /* Warna teks pada link dropdown */
+    text-decoration: none; /* Menghapus dekorasi default pada link */
+  }
+}
 @media (max-width: 767px) {
   .label-promo {
     width: 120px;
@@ -3577,24 +3602,26 @@ input[type="button"].btn-block {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
-  font-weight: 400;
-  color: #212529;
+  font-weight: 500;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
-  border: 0;
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dropdown-item:hover,
 .dropdown-item:focus {
-  color: #16181b;
+  color: #fff;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #fd4c82;
 }
 .dropdown-item.active,
 .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #fd4c82;
 }
 .dropdown-item.disabled,
 .dropdown-item:disabled {
@@ -4559,18 +4586,6 @@ input[type="button"].btn-block {
   overflow: hidden;
   z-index: 1000;
   background: linear-gradient(to right, #ffffff, #f0f0f0);
-}
-.dropdown-menu .dropdown-link {
-  padding: 10px 20px;
-  display: block;
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.dropdown-menu .dropdown-link:hover {
-  background-color: #e0e0e0;
-  /* color: #fd4c82; */
 }
 .nav-item:hover .dropdown-menu {
   display: block;
