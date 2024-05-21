@@ -486,7 +486,7 @@ mark,
 }
 /* CSS untuk perangkat mobile */
 @media screen and (max-width: 768px) {
-  .dropdown-menu {
+  .nav-item.dropdown-menu {
     display: none; /* Menyembunyikan dropdown menu secara default */
   }
 
@@ -498,11 +498,11 @@ mark,
     z-index: 999; /* Mengatur z-index untuk tumpukan elemen */
   }
 
-  .dropdown-menu li {
+  .nav-item.dropdown-menu li {
     display: block; /* Menampilkan item dropdown dalam blok */
   }
 
-  .dropdown-menu li a {
+  .nav-item.dropdown-menu li a {
     display: block; /* Menampilkan link dropdown dalam blok */
     padding: 10px; /* Padding pada link dropdown */
     color: #333333; /* Warna teks pada link dropdown */

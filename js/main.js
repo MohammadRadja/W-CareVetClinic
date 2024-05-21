@@ -66,7 +66,7 @@
   };
   carousel();
 
-  $("nav .dropdown-menu").hover(
+  $("nav .dropdown").hover(
     function () {
       var $this = $(this);
       $this.addClass("show");
