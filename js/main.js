@@ -66,20 +66,73 @@
   };
   carousel();
 
-  $("nav .dropdown").hover(
-    function () {
+  //Navbar & Dropdown
+  $(document).ready(function () {
+    // Fungsi untuk menangani toggle dropdown berdasarkan ukuran tampilan
+    function handleDropdownToggle() {
+      // Tentukan fungsi yang akan dipanggil berdasarkan ukuran layar
+      var hoverFunction =
+        $(window).width() < 768
+          ? handleDropdownHoverMobile
+          : $(window).width() > 768
+          ? handleDropdownHoverDesktop
+          : handleDropdownClose;
+
+      // Pasang event handler hover pada dropdown
+      $("nav .dropdown").hover(hoverFunction, handleDropdownClose);
+    }
+
+    // Fungsi untuk menangani hover dropdown untuk tampilan mobile
+    function handleDropdownHoverMobile() {
+      var $this = $(this);
+      var dropdownMenuHeight = $this.find(".dropdown-menu").outerHeight();
+
+      // Buka dropdown saat dihover
+      $this.addClass("show");
+      $this.find("> a").attr("aria-expanded", true);
+      $this.find(".dropdown-menu").addClass("show");
+
+      // Atur margin-top dari #gallery-menu
+      $("#gallery-menu")
+        .addClass("dropdown-show")
+        .css("margin-top", dropdownMenuHeight);
+    }
+
+    // Fungsi untuk menangani hover dropdown untuk tampilan desktop
+    function handleDropdownHoverDesktop() {
       var $this = $(this);
       $this.addClass("show");
       $this.find("> a").attr("aria-expanded", true);
       $this.find(".dropdown-menu").addClass("show");
-    },
-    function () {
+    }
+
+    // Fungsi untuk menangani hover untuk dihilangkan
+    function handleDropdownClose() {
       var $this = $(this);
+
+      // Tutup dropdown saat hover out
       $this.removeClass("show");
       $this.find("> a").attr("aria-expanded", false);
       $this.find(".dropdown-menu").removeClass("show");
+
+      // Reset margin-top dari #gallery-menu
+      $("#gallery-menu").removeClass("dropdown-show").css("margin-top", 0);
     }
-  );
+
+    // Inisialisasi handler toggle dropdown
+    handleDropdownToggle();
+
+    // Re-inisialisasi handler toggle dropdown saat ukuran window berubah
+    $(window).resize(function () {
+      // Hapus event handler sebelumnya
+      $("nav .dropdown > a").off("click");
+      $(document).off("click");
+      $("nav .dropdown").off("mouseenter mouseleave");
+
+      // Inisialisasi kembali handler berdasarkan ukuran window yang baru
+      handleDropdownToggle();
+    });
+  });
 
   // scroll
   var scrollWindow = function () {
