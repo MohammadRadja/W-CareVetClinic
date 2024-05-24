@@ -142,6 +142,15 @@
       $("#gallery-menu").removeClass("dropdown-show").css("margin-top", 0);
     }
 
+    // Fungsi untuk menampilkan #gallery-menu saat dropdown dihover pada tampilan desktop
+    function showDesktopDropdown($dropdown) {
+      var dropdownMenuHeight = $dropdown.find(".dropdown-menu").outerHeight();
+      $dropdown.addClass("show");
+      $dropdown.find("> a").attr("aria-expanded", true);
+      $dropdown.find(".dropdown-menu").addClass("show");
+      $("#gallery-menu").addClass("dropdown-show");
+    }
+
     // Fungsi untuk menampilkan #gallery-menu
     function openGalleryMenu() {
       var $galleryMenu = $("#gallery-menu");
@@ -154,7 +163,10 @@
     // Fungsi untuk menyembunyikan #gallery-menu
     function closeGalleryMenu() {
       var $galleryMenu = $("#gallery-menu");
-      $galleryMenu.removeClass("dropdown-show").css("margin-top", 0);
+      $dropdown.find("> a").attr("aria-expanded", false);
+      $dropdown.find(".dropdown-menu").removeClass("show");
+      // Hapus kelas dropdown-show dari #gallery-menu
+      $galleryMenu.removeClass("dropdown-show");
     }
 
     // Inisialisasi handler untuk dropdown toggle
@@ -165,10 +177,13 @@
       handleDropdownToggle();
     });
 
-    // Tutup dropdown saat klik diluar dropdown
-    $(document).on("click", function (e) {
-      if (!$(e.target).closest(".dropdown").length) {
-        closeDropdown($(".dropdown.show"));
+    //Tutup dropdown saat hover diluar dropdown
+    $(document).on("mouseleave click", function (e) {
+      if (
+        !$(e.target).closest(".dropdown").length &&
+        !$(e.target).is("#gallery-menu")
+      ) {
+        closeDropdown($(".dropdown.show")).stop(true, true);
       }
     });
   });
