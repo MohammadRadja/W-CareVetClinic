@@ -68,69 +68,108 @@
 
   //Navbar & Dropdown
   $(document).ready(function () {
-    // Fungsi untuk menangani toggle dropdown berdasarkan ukuran tampilan
+    // Fungsi untuk menangani perilaku dropdown berdasarkan ukuran layar
     function handleDropdownToggle() {
-      // Tentukan fungsi yang akan dipanggil berdasarkan ukuran layar
-      var hoverFunction =
-        $(window).width() < 768
-          ? handleDropdownHoverMobile
-          : $(window).width() > 768
-          ? handleDropdownHoverDesktop
-          : handleDropdownClose;
-
-      // Pasang event handler hover pada dropdown
-      $("nav .dropdown").hover(hoverFunction, handleDropdownClose);
+      if ($(window).width() < 768) {
+        // Panggil fungsi untuk menangani dropdown pada tampilan mobile
+        handleMobileDropdown();
+      } else {
+        // Panggil fungsi untuk menangani dropdown pada tampilan desktop
+        handleDesktopDropdown();
+      }
     }
 
-    // Fungsi untuk menangani hover dropdown untuk tampilan mobile
-    function handleDropdownHoverMobile() {
-      var $this = $(this);
-      var dropdownMenuHeight = $this.find(".dropdown-menu").outerHeight();
+    // Fungsi untuk menangani dropdown pada tampilan mobile
+    function handleMobileDropdown() {
+      // Hapus event handler sebelumnya dan tambahkan event handler untuk dropdown pada tampilan mobile
+      $("nav .dropdown > a")
+        .off("click")
+        .on("click", function (e) {
+          e.preventDefault();
+          var $dropdown = $(this).parent();
+          var dropdownMenuHeight = $dropdown
+            .find(".dropdown-menu")
+            .outerHeight();
 
-      // Buka dropdown saat dihover
-      $this.addClass("show");
-      $this.find("> a").attr("aria-expanded", true);
-      $this.find(".dropdown-menu").addClass("show");
+          if ($dropdown.hasClass("show")) {
+            closeDropdown($dropdown);
+          } else {
+            openDropdown($dropdown, dropdownMenuHeight);
+          }
+        });
 
-      // Atur margin-top dari #gallery-menu
+      // Tambahkan event handler untuk mengatur perilaku #gallery-menu saat dropdown dihover pada tampilan mobile
+      $("#gallery-menu").hover(
+        function () {
+          openGalleryMenu();
+        },
+        function () {
+          closeGalleryMenu();
+        }
+      );
+    }
+
+    // Fungsi untuk menangani dropdown pada tampilan desktop
+    function handleDesktopDropdown() {
+      // Hapus event handler sebelumnya dan tambahkan event handler untuk dropdown pada tampilan desktop
+      $("nav .dropdown")
+        .off("mouseenter mouseleave")
+        .hover(
+          function () {
+            showDesktopDropdown($(this));
+          },
+          function () {
+            closeDropdown($(this));
+          }
+        );
+    }
+
+    // Fungsi untuk membuka dropdown
+    function openDropdown($dropdown, dropdownMenuHeight) {
+      $dropdown.addClass("show");
+      $dropdown.find("> a").attr("aria-expanded", true);
+      $dropdown.find(".dropdown-menu").addClass("show");
       $("#gallery-menu")
         .addClass("dropdown-show")
         .css("margin-top", dropdownMenuHeight);
     }
 
-    // Fungsi untuk menangani hover dropdown untuk tampilan desktop
-    function handleDropdownHoverDesktop() {
-      var $this = $(this);
-      $this.addClass("show");
-      $this.find("> a").attr("aria-expanded", true);
-      $this.find(".dropdown-menu").addClass("show");
-    }
-
-    // Fungsi untuk menangani hover untuk dihilangkan
-    function handleDropdownClose() {
-      var $this = $(this);
-
-      // Tutup dropdown saat hover out
-      $this.removeClass("show");
-      $this.find("> a").attr("aria-expanded", false);
-      $this.find(".dropdown-menu").removeClass("show");
-
-      // Reset margin-top dari #gallery-menu
+    // Fungsi untuk menutup dropdown
+    function closeDropdown($dropdown) {
+      $dropdown.removeClass("show");
+      $dropdown.find("> a").attr("aria-expanded", false);
+      $dropdown.find(".dropdown-menu").removeClass("show");
       $("#gallery-menu").removeClass("dropdown-show").css("margin-top", 0);
     }
 
-    // Inisialisasi handler toggle dropdown
+    // Fungsi untuk menampilkan #gallery-menu
+    function openGalleryMenu() {
+      var $galleryMenu = $("#gallery-menu");
+      var dropdownMenuHeight = $galleryMenu.outerHeight();
+      $galleryMenu
+        .addClass("dropdown-show")
+        .css("margin-top", dropdownMenuHeight);
+    }
+
+    // Fungsi untuk menyembunyikan #gallery-menu
+    function closeGalleryMenu() {
+      var $galleryMenu = $("#gallery-menu");
+      $galleryMenu.removeClass("dropdown-show").css("margin-top", 0);
+    }
+
+    // Inisialisasi handler untuk dropdown toggle
     handleDropdownToggle();
 
-    // Re-inisialisasi handler toggle dropdown saat ukuran window berubah
+    // Re-inisialisasi handler dropdown toggle saat ukuran window berubah
     $(window).resize(function () {
-      // Hapus event handler sebelumnya
-      $("nav .dropdown > a").off("click");
-      $(document).off("click");
-      $("nav .dropdown").off("mouseenter mouseleave");
-
-      // Inisialisasi kembali handler berdasarkan ukuran window yang baru
       handleDropdownToggle();
+    });
+
+    // Tutup dropdown saat klik diluar dropdown
+    $(document).on("click", function (e) {
+      if (!$(e.target).closest(".dropdown").length) {
+        closeDropdown($(".dropdown.show"));
+      }
     });
   });
 
