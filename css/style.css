@@ -4577,8 +4577,9 @@ input[type="button"].btn-block {
   margin-left: 5px;
 }
 #gallery-menu {
+  position: relative;
   margin-top: 0;
-  transition: margin-top 0.5s ease; /* Transisi untuk perubahan margin-top */
+  transition: margin-top 0.1s ease; /* Transisi untuk perubahan margin-top */
 }
 #gallery-menu.dropdown-show {
   margin-top: 20px; /* Sesuaikan sesuai kebutuhan */
