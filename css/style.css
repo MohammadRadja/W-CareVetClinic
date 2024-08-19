@@ -4570,19 +4570,18 @@ input[type="button"].btn-block {
 }
 .nav-item:hover .dropdown-menu {
   display: block;
-  opacity: 1;
+  opacity: 1; /* Atur opacity ke 1 saat dropdown ditampilkan */
 }
 .nav-item .dropdown-icon {
   font-size: 15px;
   margin-left: 5px;
 }
 #gallery-menu {
-  position: relative;
   margin-top: 0;
-  transition: margin-top 0.1s ease; /* Transisi untuk perubahan margin-top */
+  transition: margin-top 0.5s ease; /* Transisi untuk perubahan margin-top */
 }
 #gallery-menu.dropdown-show {
-  margin-top: 20px; /* Sesuaikan sesuai kebutuhan */
+  margin-top: 0; /* Sesuaikan sesuai kebutuhan */
 }
 .navbar-text {
   display: inline-block;

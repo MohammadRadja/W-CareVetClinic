@@ -123,14 +123,6 @@
           }
         );
     }
-    // Fungsi untuk menampilkan #gallery-menu saat dropdown dihover pada tampilan desktop
-    function showDesktopDropdown($dropdown) {
-      var dropdownMenuHeight = $dropdown.find(".dropdown-menu").outerHeight();
-      $dropdown.addClass("show");
-      $dropdown.find("> a").attr("aria-expanded", true);
-      $dropdown.find(".dropdown-menu").addClass("show");
-      $(".dropdown").addClass("dropdown-show");
-    }
 
     // Fungsi untuk membuka dropdown
     function openDropdown($dropdown, dropdownMenuHeight) {
@@ -148,6 +140,15 @@
       $dropdown.find("> a").attr("aria-expanded", false);
       $dropdown.find(".dropdown-menu").removeClass("show");
       $("#gallery-menu").removeClass("dropdown-show").css("margin-top", 0);
+    }
+
+    // Fungsi untuk menampilkan #gallery-menu saat dropdown dihover pada tampilan desktop
+    function showDesktopDropdown($dropdown) {
+      var dropdownMenuHeight = $dropdown.find(".dropdown-menu").outerHeight();
+      $dropdown.addClass("show");
+      $dropdown.find("> a").attr("aria-expanded", true);
+      $dropdown.find(".dropdown-menu").addClass("show");
+      $("#gallery-menu").addClass("dropdown-show");
     }
 
     // Fungsi untuk menampilkan #gallery-menu
@@ -182,7 +183,7 @@
         !$(e.target).closest(".dropdown").length &&
         !$(e.target).is("#gallery-menu")
       ) {
-        closeDropdown($(".dropdown-menu.show")).stop(true, true);
+        closeDropdown($(".dropdown.show")).stop(true, true);
       }
     });
   });
