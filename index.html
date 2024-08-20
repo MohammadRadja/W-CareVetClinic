@@ -214,6 +214,7 @@
           <div class="form-group">
             <label for="service">Layanan:</label>
             <select class="form-control" id="service" required>
+              <option value="">Pilih Layanan</option>
               <option value="Home Visit">Home Visit</option>
               <option value="Medical Services">Medical Services</option>
               <option value="Grooming">Grooming</option>
@@ -226,6 +227,7 @@
               <option value="Kucing">Kucing</option>
               <option value="Anjing">Anjing</option>
               <option value="Burung">Burung</option>
+              <option value="Lain-lain">Dan Lain-lain</option>
             </select>
           </div>
           <div class="form-group">
@@ -824,9 +826,13 @@
       document.getElementById('petType').addEventListener('change', function() {
         var petType = this.value;
         var breedSelect = document.getElementById('breed');
+        var otherPetTypeInput = document.getElementById('otherPetType');
         
         // Clear existing options
         breedSelect.innerHTML = '<option value="">Pilih Ras</option>';
+        document.getElementById('otherBreed').style.display = 'none';
+        otherPetTypeInput.style.display = 'none';
+        otherPetTypeInput.value = '';
         
         var breeds = {
           'Kucing': ['Persia', 'Maine Coon', 'Siamese', 'Bengal', 'Sphynx'],
@@ -834,15 +840,33 @@
           'Burung': ['Kenari', 'Lovebird', 'Parrot', 'Kakatua', 'Merpati']
         };
       
-        if (petType && breeds[petType]) {
-          breeds[petType].forEach(function(breed) {
-            var option = document.createElement('option');
-            option.value = breed;
-            option.text = breed;
-            breedSelect.appendChild(option);
-          });
-        }
-      });
+        if (petType === 'Lain-lain') {
+            otherPetTypeInput.style.display = 'block';
+          } else if (petType && breeds[petType]) {
+            breeds[petType].forEach(function(breed) {
+              var option = document.createElement('option');
+              option.value = breed;
+              option.text = breed;
+              breedSelect.appendChild(option);
+            });
+            // Add the 'Lain-lain' option for breed
+            var otherOption = document.createElement('option');
+            otherOption.value = 'Lain-lain';
+            otherOption.text = 'Lain-lain';
+            breedSelect.appendChild(otherOption);
+          }
+        });
+
+        document.getElementById('breed').addEventListener('change', function() {
+          var breed = this.value;
+          var otherBreedInput = document.getElementById('otherBreed');
+          if (breed === 'Lain-lain') {
+            otherBreedInput.style.display = 'block';
+          } else {
+            otherBreedInput.style.display = 'none';
+            otherBreedInput.value = '';
+          }
+        });
       
       document.getElementById('reservationForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -852,12 +876,12 @@
         var date = document.getElementById('date').value;
         var time = document.getElementById('time').value;
         var service = document.getElementById('service').value;
-        var petType = document.getElementById('petType').value;
-        var breed = document.getElementById('breed').value;
+        var petType = document.getElementById('petType').value === 'Lain-lain' ? document.getElementById('otherPetType').value : document.getElementById('petType').value;
+        var breed = document.getElementById('breed').value === 'Lain-lain' ? document.getElementById('otherBreed').value : document.getElementById('breed').value;
         var age = document.getElementById('age').value;
         var complaint = document.getElementById('complaint').value;
       
-        var whatsappUrl = `https://wa.me/6281977001611?text=` +
+        var Message = `https://wa.me/6281977001611?text=` +
           `*Formulir Reservasi*%0A%0A` +
           `*Nama:* ${encodeURIComponent(name)}%0A` +
           `*Nomor Telepon:* ${encodeURIComponent(phone)}%0A` +
@@ -870,7 +894,7 @@
           `*Usia:* ${encodeURIComponent(age)}%0A%0A` +
           `*Keluhan:* ${encodeURIComponent(complaint)}`;
       
-        window.open(whatsappUrl, '_blank');
+        window.open(Message, '_blank');
       });
       </script>   
   </body>
