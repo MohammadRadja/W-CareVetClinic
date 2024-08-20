@@ -220,16 +220,19 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="petName">Nama Hewan:</label>
-            <input type="text" class="form-control" id="petName" placeholder="Nama Hewan Anda" required>
-          </div>
-          <div class="form-group">
             <label for="petType">Jenis Hewan:</label>
-            <input type="text" class="form-control" id="petType" placeholder="Jenis Hewan (contoh: Kucing, Anjing)" required>
+            <select class="form-control" id="petType" required>
+              <option value="">Pilih Jenis Hewan</option>
+              <option value="Kucing">Kucing</option>
+              <option value="Anjing">Anjing</option>
+              <option value="Burung">Burung</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="breed">Ras:</label>
-            <input type="text" class="form-control" id="breed" placeholder="Ras Hewan Anda" required>
+            <select class="form-control" id="breed" required>
+              <option value="">Pilih Ras</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="age">Usia:</label>
@@ -818,6 +821,29 @@
     </script>
     
     <script>
+      document.getElementById('petType').addEventListener('change', function() {
+        var petType = this.value;
+        var breedSelect = document.getElementById('breed');
+        
+        // Clear existing options
+        breedSelect.innerHTML = '<option value="">Pilih Ras</option>';
+        
+        var breeds = {
+          'Kucing': ['Persia', 'Maine Coon', 'Siamese', 'Bengal', 'Sphynx'],
+          'Anjing': ['Golden Retriever', 'Bulldog', 'Poodle', 'Labrador', 'Beagle'],
+          'Burung': ['Kenari', 'Lovebird', 'Parrot', 'Kakatua', 'Merpati']
+        };
+      
+        if (petType && breeds[petType]) {
+          breeds[petType].forEach(function(breed) {
+            var option = document.createElement('option');
+            option.value = breed;
+            option.text = breed;
+            breedSelect.appendChild(option);
+          });
+        }
+      });
+      
       document.getElementById('reservationForm').addEventListener('submit', function(event) {
         event.preventDefault();
       
@@ -826,7 +852,6 @@
         var date = document.getElementById('date').value;
         var time = document.getElementById('time').value;
         var service = document.getElementById('service').value;
-        var petName = document.getElementById('petName').value;
         var petType = document.getElementById('petType').value;
         var breed = document.getElementById('breed').value;
         var age = document.getElementById('age').value;
@@ -840,7 +865,6 @@
           `*Waktu Reservasi:* ${encodeURIComponent(time)}%0A` +
           `*Layanan:* ${encodeURIComponent(service)}%0A%0A` +
           `*Informasi Hewan*%0A` +
-          `*Nama Hewan:* ${encodeURIComponent(petName)}%0A` +
           `*Jenis Hewan:* ${encodeURIComponent(petType)}%0A` +
           `*Ras:* ${encodeURIComponent(breed)}%0A` +
           `*Usia:* ${encodeURIComponent(age)}%0A%0A` +
@@ -848,6 +872,6 @@
       
         window.open(whatsappUrl, '_blank');
       });
-      </script>      
+      </script>   
   </body>
 </html>
