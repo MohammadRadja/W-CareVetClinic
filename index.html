@@ -183,6 +183,46 @@
     </section>
     <!-- Service Intro Section Start  -->
 
+    <!-- Reservation Form Section Start -->
+<section class="ftco-section bg-light ftco-no-pt">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4">Reservasi Sekarang</h2>
+        <p>Isi formulir di bawah ini untuk melakukan reservasi layanan kami.</p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <form id="reservationForm">
+          <div class="form-group">
+            <label for="name">Nama:</label>
+            <input type="text" class="form-control" id="name" placeholder="Nama Lengkap Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Nomor Telepon:</label>
+            <input type="text" class="form-control" id="phone" placeholder="Nomor Telepon Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Layanan:</label>
+            <select class="form-control" id="service" required>
+              <option value="Home Visit">Home Visit</option>
+              <option value="Medical Services">Medical Services</option>
+              <option value="Grooming">Grooming</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan:</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Pesan tambahan atau permintaan khusus" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Kirim Reservasi</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Reservation Form Section End -->
+
     <!-- About Section Start  -->
     <section
       class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb bg-light"
@@ -753,5 +793,23 @@
       gtag('event', 'conversion', {'send_to': 'AW-11302556941/CSt5CMXpi6sZEI2qvY0q'});
     </script>
     
+    <script>
+      document.getElementById('reservationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+      
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var service = document.getElementById('service').value;
+        var message = document.getElementById('message').value;
+      
+        var whatsappUrl = `https://wa.me/6281977001611?text=` +
+          `Nama: ${encodeURIComponent(name)}%0A` +
+          `Nomor Telepon: ${encodeURIComponent(phone)}%0A` +
+          `Layanan: ${encodeURIComponent(service)}%0A` +
+          `Pesan: ${encodeURIComponent(message)}`;
+      
+        window.open(whatsappUrl, '_blank');
+      });
+      </script>
   </body>
 </html>
