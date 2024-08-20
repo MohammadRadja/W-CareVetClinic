@@ -204,12 +204,28 @@
             <input type="text" class="form-control" id="phone" placeholder="Nomor Telepon Anda" required>
           </div>
           <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Email Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Tanggal Reservasi:</label>
+            <input type="date" class="form-control" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Waktu Reservasi:</label>
+            <input type="time" class="form-control" id="time" required>
+          </div>
+          <div class="form-group">
             <label for="service">Layanan:</label>
             <select class="form-control" id="service" required>
               <option value="Home Visit">Home Visit</option>
               <option value="Medical Services">Medical Services</option>
               <option value="Grooming">Grooming</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="additionalService">Layanan Tambahan:</label>
+            <textarea class="form-control" id="additionalService" rows="3" placeholder="Layanan tambahan yang diinginkan (misalnya: vaksin, check-up, dll.)"></textarea>
           </div>
           <div class="form-group">
             <label for="message">Pesan:</label>
@@ -799,13 +815,21 @@
       
         var name = document.getElementById('name').value;
         var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
         var service = document.getElementById('service').value;
+        var additionalService = document.getElementById('additionalService').value;
         var message = document.getElementById('message').value;
       
         var whatsappUrl = `https://wa.me/6281977001611?text=` +
           `Nama: ${encodeURIComponent(name)}%0A` +
           `Nomor Telepon: ${encodeURIComponent(phone)}%0A` +
+          `Email: ${encodeURIComponent(email)}%0A` +
+          `Tanggal Reservasi: ${encodeURIComponent(date)}%0A` +
+          `Waktu Reservasi: ${encodeURIComponent(time)}%0A` +
           `Layanan: ${encodeURIComponent(service)}%0A` +
+          `Layanan Tambahan: ${encodeURIComponent(additionalService)}%0A` +
           `Pesan: ${encodeURIComponent(message)}`;
       
         window.open(whatsappUrl, '_blank');
